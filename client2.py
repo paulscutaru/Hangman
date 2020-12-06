@@ -20,4 +20,8 @@ while True:
     else:
         print('-----------Game started!-----------')
 
-    
+    data = server.recv(1024)
+    definition = data.decode()
+
+    print('Here is the definition of the word:', definition)
+

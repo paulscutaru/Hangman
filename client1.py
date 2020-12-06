@@ -20,5 +20,9 @@ while True:
     else:
         print('-----------Game started!-----------')
 
+    word = input('Enter word to be sent to server: ')
+    server.send(word.encode())
 
+    definition = input('Enter a short definition of the word: ')
+    server.send(definition.encode())
 

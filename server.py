@@ -48,6 +48,17 @@ while True:
     else:
         notifyClients()
 
+    # Get the word choosen by client 1
+    data = clientsocket1.recv(1024)
+    word = data.decode()
+    print('Received word:', word)
 
+    # Get the definition of the word
+    data2 = clientsocket1.recv(1024)
+    definition = data2.decode()
+    print('Received definition:', definition)
+
+    # Send the definition to client 2
+    clientsocket2.send(data2)
 
 
