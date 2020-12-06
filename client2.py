@@ -20,20 +20,4 @@ while True:
     else:
         print('-----------Game started!-----------')
 
-    data = server.recv(1024)
-    definition = data.decode()
-
-    print('Here is the definition of the word:', definition)
-
-    while True:
-        letter = input('Guess a letter: ')
-        server.send(letter.encode())
-
-        data1 = server.recv(1024)
-        print(data1.decode(), end=' ')
-
-        data2 = server.recv(1024)
-        print(data2.decode())
-
-        if data1.decode() == 'You did not guess the word' or data1.decode() == 'You guessed the word':
-            break
+    

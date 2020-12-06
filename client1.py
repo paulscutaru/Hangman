@@ -20,18 +20,5 @@ while True:
     else:
         print('-----------Game started!-----------')
 
-    word = input('Enter word to be sent to server: ')
-    server.send(word.encode())
 
-    definition = input('Enter a short definition of the word: ')
-    server.send(definition.encode())
 
-    while True:
-        data1 = server.recv(1024)
-        print(data1.decode(), end=' ')
-
-        data2 = server.recv(1024)
-        print(data2.decode())
-
-        if data1.decode() == 'The other player guessed the word' or data1.decode() == 'The other player did not guess the word':
-            break
